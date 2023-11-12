@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="RussianPost.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RussianPost"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="о программе" Click="AppBarButton_Click_1"/>
+            </CommandBar.SecondaryCommands>
+            <AppBarButton Label="добавить" Click="AppBarButton_Click" x:Name="AddButton">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE109;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="обновить" Click="AppBarButton_Click_2" x:Name="ReloadButton">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE117;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <ProgressBar x:Name="ProgressIndicator" IsIndeterminate="True" Margin="0,0,26.5,0"/>
+            <TextBlock Text="ПОЧТА СТРАНЫ" x:Name="TitleLabel" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="посылки" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <ListBox Grid.Row="1" x:Name="packageList" Margin="19,9.5,19,0" Background="{x:Null}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="auto" HorizontalAlignment="Stretch" Holding="Item_Holding" Tapped="StackPanel_Tapped">
+                        <FlyoutBase.AttachedFlyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem x:Name="DeleteButton"
+                            Text="Удалить"
+                            Click="DeleteButton_Click"/>
+                            </MenuFlyout>
+                        </FlyoutBase.AttachedFlyout>
+                        <TextBlock VerticalAlignment="Center" FontSize="14" Grid.Column="0" Text="{Binding ID}" Foreground="#999999"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="24" Grid.Column="0" Text="{Binding Name}" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="16" Grid.Column="0" Text="{Binding LastState}" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>
