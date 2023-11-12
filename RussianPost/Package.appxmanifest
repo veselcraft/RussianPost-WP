@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="0c6c701b-6ede-4f08-a9ab-45a9a2610ab7" Publisher="CN=miles" Version="1.0.0.4" />
+  <Identity Name="0c6c701b-6ede-4f08-a9ab-45a9a2610ab7" Publisher="CN=veselcraft" Version="1.0.0.5" />
   <mp:PhoneIdentity PhoneProductId="0c6c701b-6ede-4f08-a9ab-45a9a2610ab7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>RussianPost</DisplayName>

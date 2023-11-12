@@ -4,6 +4,11 @@
 
 В Releases программа не подписана, нужно подписать или ставить в Developer Mode (например, через CMD Injector).
 
+## Скриншоты
+
+<img src="Images/list.png" width="200">
+<img src="Images/package.png" width="200">
+
 ## Хочу это забилдить
 
 Убедитесь, что у вас
